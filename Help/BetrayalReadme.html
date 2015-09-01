@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Betrayal Readme</title>
+<style type="text/css">
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+</style>
+</head>
+<body>
+<h1>Betrayal</h1>
+<p>for UT2004 by <a href="http://www.koehler-homepage.de/Wormbo/">Wormbo</a></p>
+<h2>Description</h2>
+<p>Betrayal originally is a game mode in Unreal Tournament 3, and this UT2004 port stays very close to the original.<br>
+In this game mode you play Instagib DeathMatch with temporary teams of up to 3 players each.
+As in regular DeathMatch the goal is to be first to reach a score limit or to have the highest score when time limit hits.
+Each kill not only increases your score, but also adds one point to the team pot.
+At some point you or a teammate may decide to betray the team and take the pot by killing a teammate with the secondary fire mode of the Super Shock Rifle.
+The betrayer receives the pot, leaves the team and becomes a rogue for 30 seconds.
+Betraying with 3 or less points in the pot doubles the rogue penalty time to encourage proper gameplay.
+During that time a former teammate can kill the betrayer for retribution and 6 additional points.
+If the rogue avoids payback, he or she becomes a freelancer and will join another team as soon as one is available.<br>
+The key to win is to betray at the right time. The longer you wait the larger the pot gets, but the risk of being betrayed also rises.</p>
+<p>Plain Instagib might not be everyone's cup of tea, so this package contains a mutator to replace the Super Shock Rifle with an Instagib Mercury Missile Launcher.
+Mercury Missiles are very fast rockets, but they are not instant-hit like a shock beam.
+They even accelerate until they are fast enough to go right through an opponent and potentially hit a second one.
+Only a direct hit can kill, splash damage just pushes players around.</p>
+
+<h2>Installation</h2>
+<p>To install this mod, simply put Betrayal.u and Betrayal.ucl into your UT2004\System directory.
+If you are having trouble recording demos in Betrayal, you may need to add the line <code>ServerPackages=Betrayal</code> to the <code>[Engine.GameEngine]</code> section of your UT2004.ini.<br>
+To launch Betrayal as start-up game mode, simply add the URL parameter <code>?game=Betrayal.BetrayalGame</code> to the start-up command line of your server.<br>
+To replace the Shock Rifle with the Mercury Missile Launcher, also add <code>?mutator=Betrayal.MutMercuryIGBetrayal</code> or merge it with an existing <code>?mutator=</code> URL parameter.
+This mutator only works in the Betrayal game mode.
+If you are interested in Mercury Missiles for other game modes, visit my <a href="http://www.koehler-homepage.de/Wormbo/downloads2k4.html#MM2">download section</a>.</p>
+<p>The <b>Redirect</b> folder in the archive contains a compressed version of Betrayal.u for upload to a <a href="http://wiki.unrealadmin.org/Redirection_and_Compression">redirected download server</a>.</p>
+
+<h2>Configuration</h2>
+<p>Betrayal can be easily configured from within UT2004 when you start a new game or from the webadmin interface if you run it on a dedicated server.
+Compared to standard DeathMatch it adds a few options:</p>
+<ul>
+<li><b>Instagib Beam Multi-Hit</b> allows the beam to go right through the player you hit, potentially hitting other players lined up, until it is blocked by a solid object.</li>
+<li><b>Special Kill Rewards</b> add an additional point to the players score if a shot was a headshot and/or hit multiple players.
+Performing a headshot and hitting multiple players in a single shot still only awards one additional point in total.</li>
+<li><b>Restore Player Stats</b> when a player returns from spectator mode or disconnect.</li>
+<li><b>Max. Unlagging Time</b> (not available in offline play) specifies the maximum time span being compensated by the built-in server-side ping compensation.
+Setting the maximum unlagging time to 0 disables ping compensation. Note that using Mercury Missiles disables server-side ping compensation.</li>
+<li><b>Brighter Player Skins</b> slightly increases player skin brightness for visually impaired TAM/UTComp players.
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAAB3RJTUUH2wcQCygABxyMiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAAYZJREFUeNqlU7tKBEEQrN699ydoKBgpBocHZpeJCAYmghiIPycGGpgIgngKoiAIfoSGPgJv9/Y1ds3s7s0tZg40Mz3b1dNV3SuTyQTNNR6PTfNO46R51/oL9P4GZCkwm6nF3AXDkfvmJwl84OcH8P0F9PtAt6fWBdodfUGfeHoQ3F7LQlWBDySgVwI7BLXVQg0KDcKAO3B1OU9QvxzoaTBw5zB0/tIyILqvbwCbWwasVzzmPBpyrEqtElTcox9gZdX5dzeCqfpRBOwfGCcYxUlCF0DORaF+4sTKcuD1RSyAifjNFJ7aVJUr18BAaynMXO1Uk2RZabkDFwvg2F20EseRmRlIYJqIrcImSV2SvPDUZh/jSCw3cppqifTtvb6ezByNnT1jwUVegtn04chYTs+PgjVVNp6WHG0SNa1se9fg/FQs+PDY2GGpJ4xisI/3qijb0lwEplp2nnmtqmabjecAsI/GzIWpxcoc8OjE1CMq/o9RTc7FmVjRCKY45MhSm7Mt//mrfgGW5+UNmt3PegAAAABJRU5ErkJggg==" alt=";-)"></li>
+<li><b>Improved slope dodging</b> adjusts the dodging direction to help dodging up a (walkable) slope.</li>
+<li>When using the Mercury Missiles mutator, you can also configure the <b>Rocket jump boost</b>, which scales the efficiency of rocket jumps with Mercury Missiles. </li>
+</ul>
+<p>Clientsidely you can also access several configuration options via the HUD settings page or the commands to access the UTComp or TAM/Freon menu.</p>
+<ul>
+<li><b>Swap team colors</b> causes your team to be red and opponents blue.
+Note that the shot colors are not swapped, so red still kills opponents and blue kills teammates.</li>
+<li><b>Use shot unlagging</b> applies serverside ping compensation to your Instagib Shock Rifle shots.
+Note that unlagging can be disabled serversidely as well.</li>
+<li><b>Ping smoothing</b> specifies the number of recent ping values to be used in Betrayal's custom ping calculation method.
+Smaller numbers may cause ping spikes, while larger numbers may cause the calculated ping to lag behind your actual ping if your ping isn't stable during the match.
+You can still see the UT2004 ping in the <kbd>Stat Net</kbd> display available via <kbd><kbd>F6</kbd></kbd> by default, while the HUD and scoreboard show Betrayal pings.</li>
+<li><b>No console death messages</b> turns off death messages for the Betrayal game type only, i.e. other game types are not affected.</li>
+</ul>
+
+<h2>The HUD</h2>
+<p>The Betrayal HUD adds two new widgets compared to the standard DeathMatch HUD:</p>
+<img alt="Betrayal HUD elements" src="BetrayalHUD.jpg" class="center">
+<p>In the top center you can find all Betrayal-related information you need.
+The list shows your teammates and how often they betrayed their previous teams, the name of the player who betrayed you, if any, and how long you can still try getting retribution, and the team pot size.
+Each silver dagger in the betrayal count stands for one betrayal, a gold dagger stands for five betrayals.
+If you have betrayed your team, you will instead see how long you need to avoid payback.
+The last betrayer is shown regardless of your current status, whether you are a freelancer, rogue or in a team.<br>
+At the top right you see a network status widget, which for obvious reasons is only shown in network games.
+The larger number is your current ping, the smaller your packet loss rate.
+The circle shows the unlagging status.
+Green means ping is low and compensation will work well, red means your ping is above the configured maximum unlagging time.
+Black means unlagging is not available because either you or the server disabled it, or because Mercury Missiles are used instead of the Shock Rifle.
+The circle flashes if you are having connection problems.<br>
+Unlike in standard DeathMatch, all players have their name and score value floating above their head.
+You will get more points (up to 10) for killing enemy players with a higher score than you and 6 points on top of that if the player was a rogue who betrayed you.
+The bonus for higher-ranked players is not added for killing your current teammates or while you are a rogue.
+The colors show the player's relation to you: blue is a teammate, gold a rogue, red a former teammate seeking retribution and white are regular opponents.
+With swapped team colors, teammates are marked in red while former teammates seeking retribution are marked in blue.</p>
+<h2>The Scoreboard</h2>
+<p>The scoreboard for Betrayal contains many details about the players in the match:</p>
+<img alt="Betrayal scoreboard elements" src="BetrayalScores.jpg" class="center">
+<p>The background color of each row tells about the player's relation to you.
+A rogue - either you or a player who betrayed you - has a brown background, your teammates are shown in blue, and if you betrayed your team your former teammates have a red background.
+With swapped team colors, teammates have a red background while betrayed former teammates have a blue one.
+The first column shows each player's rank.
+Next is the list of names and their betrayal counts in the same way as on the HUD.
+After the scores column there's a stats column that can be cycled via the key mentioned after the stats caption.
+Available stats are:</p>
+<ul>
+<li>Accuracy, hits and total shots.
+Accuracy obviously is the percentage of the shots that actually hit a player.
+Multiple hits with a single shot count as a single hit.</li>
+<li>Efficiency, kills and deaths.
+Efficiency is calculated as kills divided by the sum of kills and deaths.</li>
+<li>Retribution rate, number of retributions and number of betrayals against you.
+This basically tells how efficiently players get retribution after being betrayed.</li>
+<li>Payback rate, how often the player failed to avoid payback and how often the player betrayed his teamamtes.
+Here lower is better as it means the player efficiently avoids payback for betraying teammates.</li>
+</ul>
+<p>The final column is not shown in offline games.
+It contains the player's ping and packet loss, or displays <b>Admin</b> if the player is currently logged in as server admin.
+No text here means it's a bot.
+If there are any spectators on the server, they are displayed in the bottom right corner.
+Spectating admins are marked with <b>(Admin)</b>.
+Before the match starts, rank, score and stats are not displayed.
+Instead, if the server settings require players to signal whether they are ready, each player's ready status is indicated by a red cross (not ready) or green tick (ready).</p>
+</body>
+</html>
